@@ -16,5 +16,20 @@ var swiper = new Swiper(".bg-slider-thumbs", {
 
   window.addEventListener("scroll",function(){
     const header =this.document.querySelector("header");
-    header.classList.toggle("sticky",this.window.scrollY > 0) // this code is when i scroll down , to make class "sticky"
+    header.classList.toggle("sticky",window.scrollY > 0) // this code is when i scroll down , to make class "sticky"
   })
+
+  // navigation open / close
+  const menuBtn =document.querySelector(".nav-bar .nav-menu-btn");
+  const closeBtn =document.querySelector(".nav-close-btn");
+  const navigation =document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click",() => {
+    navigation.classList.add("active");
+    console.log('this is menu');
+  });
+
+  closeBtn.addEventListener("click",()=>{
+    navigation.classList.remove("active");
+   
+  });
